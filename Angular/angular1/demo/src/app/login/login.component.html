@@ -1,0 +1,41 @@
+
+
+<!-- <form>
+<input type="text" placeholder="username">
+<input type="text" placeholder="password">
+<button>login</button>
+  </form> -->
+
+
+
+
+
+  <form #form1="ngForm" (ngSubmit)="submit(form1)">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" #u_email="ngModel" [(ngModel)]="email" required>
+        <span *ngIf="form1.touched && u_email.errors?.['required']">Please Enter Email</span>
+    </div>
+    <br><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="pass" #u_pass="ngModel" [(ngModel)]="email" required>
+        <div>
+            <span *ngIf="form1.submitted && u_pass.errors?.['required']">Please Enter Password</span>
+            <span *ngIf=""></span>
+        </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form1.invalid">Submit</button>
+    <hr> {{form1.value}}
+</form>
+
+
+
+
+
+
+
+
+
+  
